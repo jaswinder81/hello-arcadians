@@ -44,7 +44,7 @@ jobs:
         with:
           creds: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C1BAEB81B3D4BF6A4E372B423AC92DA }}
           
-      - name: Download artifact
+      - name: Download artifact for deloyment
         uses: actions/download-artifact@v2
         with:
           name: java-app
@@ -58,7 +58,7 @@ jobs:
       - name: Set SAS token expiration
         run: echo "expiry=`date -u -d "$EXPIRY_TIME" '+%Y-%m-%dT%H:%MZ'`" >> $GITHUB_ENV
 
-      - name: Azure CLI script
+      - name: Azure CLI script to Create & Delete SA, Container and Deploy WAR.
         uses: azure/CLI@v1
         with:
           azcliversion: 2.19.1
