@@ -39,10 +39,10 @@ jobs:
     needs: build
     
     steps:
-      - name: Azure Login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C1BAEB81B3D4BF6A4E372B423AC92DA }}
+      # - name: Azure Login
+      #   uses: azure/login@v1
+      #   with:
+      #     creds: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C1BAEB81B3D4BF6A4E372B423AC92DA }}
           
       - name: Download artifact for deloyment
         uses: actions/download-artifact@v2
